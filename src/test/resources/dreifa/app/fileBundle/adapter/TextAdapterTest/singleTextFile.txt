@@ -1,0 +1,7 @@
+.metadata.id=123456
+.metadata.name=HelloWorldBundle
+---
+TextBundleItem
+greeting.txt
+notExecutable
+Hello, world

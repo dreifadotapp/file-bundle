@@ -1,0 +1,7 @@
+.metadata.id=abcdef
+.metadata.name=BinaryBundle
+---
+BinaryBundleItem
+greeting.bin
+executable
+SGVsbG8sIHdvcmxk
