@@ -25,7 +25,6 @@ can convert the bundle to and from other formats for persistence. For example:
 * `TextAdapter` converts a format that holds the content as a single human ready text string
 * `FilesAdapter` converts to and from a list of Java File objects.
 
-
 ## Dependencies
 
 As with everything in [Dreifa dot App](https://dreifa.app), this library has minimal dependencies:
@@ -50,4 +49,3 @@ implementation "com.github.dreifadotapp:file-bundle:<release>"
 ```
 
 _JitPack build status is at https://jitpack.io/com/github/dreifadotapp/file-bundle/$releaseTag/build.log_
-
