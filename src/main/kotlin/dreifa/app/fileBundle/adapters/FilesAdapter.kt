@@ -9,7 +9,6 @@ import java.nio.file.Paths
 import java.nio.file.attribute.PosixFileAttributes
 import java.nio.file.attribute.PosixFilePermission
 
-
 class FilesAdapter(private val rootDir: String) : FileBundleAdapter<List<File>> {
     init {
         File(rootDir).mkdirs()
@@ -47,8 +46,8 @@ class FilesAdapter(private val rootDir: String) : FileBundleAdapter<List<File>> 
         return results
     }
 
-    private fun makeExecutable(path: String) {
-        val path = Paths.get(path)
+    private fun makeExecutable(rawPath: String) {
+        val path = Paths.get(rawPath)
         val perms: MutableSet<PosixFilePermission> =
             Files.readAttributes(path, PosixFileAttributes::class.java).permissions()
         perms.add(PosixFilePermission.OWNER_EXECUTE)

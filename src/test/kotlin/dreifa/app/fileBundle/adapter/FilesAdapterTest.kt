@@ -10,7 +10,6 @@ import dreifa.app.fileBundle.adapters.FileBundleAdapter
 import dreifa.app.fileBundle.adapters.FilesAdapter
 import dreifa.app.fileBundle.adapters.TextAdapter
 import dreifa.app.helpers.random
-import dreifa.app.types.UniqueId
 import org.junit.jupiter.api.Test
 import java.io.File
 import java.lang.RuntimeException
@@ -34,7 +33,7 @@ class FilesAdapterTest() : BaseAdapterTest<List<File>>() {
         loadAdapted("exampleFiles")
     }
 
-    override fun createAdapter(dataMode: DataMode): FileBundleAdapter<List<File>> {
+    override fun createAdapter(mode: DataMode): FileBundleAdapter<List<File>> {
         val testDir = ".testing/${String.random()}"
         return FilesAdapter(testDir)
     }
@@ -55,8 +54,6 @@ class FilesAdapterTest() : BaseAdapterTest<List<File>>() {
         val a = actual.sortedBy { it.name }
         val e = expected.sortedBy { it.name }
 
-        val x = a.last().length()
-        val y = e.last().length()
         assertThat(a.map { it.name }, equalTo(e.map { it.name }))
         assertThat(a.map { it.length() }, equalTo(e.map { it.length() }))
 
@@ -87,6 +84,5 @@ class FilesAdapterTest() : BaseAdapterTest<List<File>>() {
             throws<RuntimeException>(has(Exception::message, present(equalTo("cannot read text when in summary mode"))))
         )
     }
-
 
 }
