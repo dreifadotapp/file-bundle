@@ -44,7 +44,7 @@ class FileBundleTest {
         // so we convert to a string using the TextAdapter
         val adapter = TextAdapter()
         val serialiser = JsonSerialiser()
-        val serialised = serialiser.serialiseData(adapter.fromBundle(data))
-        return adapter.toBundle(serialiser.deserialiseData(serialised).any() as String)
+        val serialised = serialiser.toPacket(adapter.fromBundle(data))
+        return adapter.toBundle(serialiser.fromPacket(serialised).any() as String)
     }
 }
