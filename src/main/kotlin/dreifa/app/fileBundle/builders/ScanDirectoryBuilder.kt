@@ -65,7 +65,7 @@ class ScanDirectoryBuilder(
     private fun hasTextExtension(path: String): Boolean {
         return if (path.contains(".")) {
             val parts = path.split(".")
-            val extension = parts[parts.size - 1].toLowerCase()
+            val extension = parts[parts.size - 1].lowercase()
             textFileExtensions.contains(extension)
         } else {
             false
